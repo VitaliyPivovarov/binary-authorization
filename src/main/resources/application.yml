@@ -1,0 +1,27 @@
+server:
+  port: 8888
+  error:
+    include-message: always
+
+spring:
+
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST_NAME}:${POSTGRES_PORT}/postgres
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    open-in-view: false
+    show_sql: false
+jwt:
+  token:
+    secret: ${JWT_SECRET}
+    expired: 259200000
+    refresh: 2419200000
